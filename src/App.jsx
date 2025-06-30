@@ -1,11 +1,14 @@
-import React from 'react'
-import Login from './components/forms/SignupForm'
+import { useState } from 'react'
+import Navbar from './home/Navbar'
+import SideBar from './home/SideBar'
 
 const App = () => {
+  const [sideBarToggle, setSideBarToggle]= useState(false)
+console.log(sideBarToggle)
   return (
-    <div>
-      <h1>App page</h1>
-      <Login/>
+    <div className=''>
+      <Navbar sideBarToggle={sideBarToggle} setSideBarToggle={setSideBarToggle} />
+      <SideBar sideBarToggle={sideBarToggle} setSideBarToggle={setSideBarToggle}/>
     </div>
   )
 }
